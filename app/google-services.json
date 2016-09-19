@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "57517006480",
+    "firebase_url": "https://roboq-7e9fe.firebaseio.com",
+    "project_id": "roboq-7e9fe",
+    "storage_bucket": "roboq-7e9fe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:57517006480:android:78a7a13a4abfcb35",
+        "android_client_info": {
+          "package_name": "vymajoris.roboq"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "57517006480-2bl5jlk3sp8ib6k5qfjn3erp5rnh0vpf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "vymajoris.roboq",
+            "certificate_hash": "26E54E43DFE9AB9ABD234F5DCBCADBD948A8E15D"
+          }
+        },
+        {
+          "client_id": "57517006480-oo0inng5d8grn9iicmns4391jn3amka3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgBbWt8IphJJEm49htU-e4cWAx9rh_Nk4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "57517006480-oo0inng5d8grn9iicmns4391jn3amka3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

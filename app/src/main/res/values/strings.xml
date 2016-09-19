@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">RoboQ</string>
+    <string name="estbTitle">Estabelecimento XYZ</string>
+    <string name="queueSize">Tamanho da fila: </string>
+    <string name="ticketBtn">Pegar senha</string>
+    <string name="ticketRetrieved">Senha Retirada!</string>
+    <string name="queuePos">Sua Posição: </string>
+    <string name="qrCodeAuthText">QR Code para Autenticação:</string>
+    <string name="forfeitTicket">Cancelar Senha</string>
+    <string name="ticketForfeited">Você saiu da fila</string>
+</resources>
