@@ -1,5 +1,6 @@
 package vymajoris.roboq;
 
+import android.app.ProgressDialog;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
@@ -9,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -40,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
     String deviceID = FirebaseInstanceId.getInstance().getToken();
     public static final String API = "http://ec2-52-43-169-138.us-west-2.compute.amazonaws.com:8080/";
 
+    ProgressDialog progressDoalog;
+
     Long qPosLong;
     TextView qPos;
     ImageView qrCode;
@@ -57,6 +61,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        progressDoalog = new ProgressDialog(MainActivity.this);
+        progressDoalog.setMessage("Carregando...");
+        progressDoalog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        progressDoalog.show();
+
         setContentView(R.layout.activity_main);
 
         qPos = (TextView) findViewById(R.id.queuePos);
@@ -73,6 +82,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 qSize.setText(getResources().getString(R.string.queueSize) + " " + String.valueOf(dataSnapshot.getChildrenCount()));
+                qSize.setVisibility(View.VISIBLE);
+                progressDoalog.dismiss();
             }
 
             @Override
@@ -184,6 +195,7 @@ public class MainActivity extends AppCompatActivity {
             ticketBtn.setBackgroundColor(Color.RED);
             qrCode.setVisibility(View.VISIBLE);
             qrCode.setImageBitmap(Bitmap.createScaledBitmap(BitMapUtil.changeColor(QRCode.from(deviceID).bitmap(), Color.WHITE, Color.TRANSPARENT), 1000, 1000, false));
+            ticketBtn.setEnabled(true);
             ticketBtn.setText(R.string.forfeitTicket);
             qrCodeAuthText.setVisibility(View.VISIBLE);
 
@@ -193,7 +205,7 @@ public class MainActivity extends AppCompatActivity {
             ticketRetrivedText.setVisibility(View.VISIBLE);
 
         } else {
-
+            ticketBtn.setEnabled(true);
             qrCode.setVisibility(View.INVISIBLE);
             qrCode.setImageBitmap(null);
             qrCodeAuthText.setVisibility(View.INVISIBLE);
